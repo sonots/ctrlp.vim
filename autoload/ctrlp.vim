@@ -490,11 +490,12 @@ fu! s:Render(lines, pat)
 	en
 	let s:matched = copy(lines)
 	" Sorting
-	if !s:nosort()
-		let s:compat = s:martcs.pat
-		cal sort(lines, 's:mixedsort')
-		unl s:compat
-	en
+	"if !s:nosort()
+	"	let s:compat = s:martcs.pat
+	"	cal sort(lines, 's:mixedsort')
+	"	unl s:compat
+	"en
+	cal sort(lines)
 	if s:mwreverse | cal reverse(lines) | en
 	let s:lines = copy(lines)
 	cal map(lines, 's:formatline(v:val)')
